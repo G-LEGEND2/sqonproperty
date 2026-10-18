@@ -52,7 +52,7 @@ export async function watermarkBuffer(buffer) {
         class="wm"
         stroke="rgba(0,0,0,0.15)"
         stroke-width="2"
-      >SQON</text>
+      >SQOON</text>
     </svg>
   `;
 
