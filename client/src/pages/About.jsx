@@ -3,24 +3,24 @@ export default function About() {
     <div className="max-w-4xl mx-auto px-4 py-12">
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-blue-800 mb-3">
-          SQON Property Management
+          SQOON Property Management
         </h1>
         <p className="text-lg text-gray-600 font-medium">
-          Professional Property Management. Trusted Service. Lasting Value.
+          Professional Property Management. Trusted Services. Lasting Value.
         </p>
       </div>
 
       <section className="bg-white rounded-lg shadow p-6 md:p-8 mb-8 space-y-4 text-gray-700 leading-relaxed">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">About Us</h2>
         <p>
-          Welcome to <strong>SQON Property Management</strong>, your partner in
+          Welcome to <strong>SQOON Property Management</strong>, your partner in
           professional property management and real estate services. We are
           committed to helping property owners protect their investments,
           maintain their properties, and maximize the long-term value of their
           real estate assets.
         </p>
         <p>
-          Led by <strong>Corey Quaintance</strong>, CEO and Owner, SQON Property
+          Led by <strong>Corey Quaintance</strong>, CEO and Owner, SQOON Property
           Management focuses on delivering reliable service, transparent
           communication, and practical property management solutions tailored to
           the needs of property owners, landlords, tenants, and real estate
@@ -33,7 +33,7 @@ export default function About() {
           goal is to make property ownership more convenient and rewarding.
         </p>
         <p>
-          At SQON Property Management, we understand that real estate is more
+          At SQOON Property Management, we understand that real estate is more
           than property—it is an investment in the future. That is why we strive
           to build lasting relationships, maintain high service standards, and
           treat every property with the care and attention it deserves.
@@ -45,11 +45,11 @@ export default function About() {
         </p>
         <p>
           Whether you own a single rental property or manage a growing real
-          estate portfolio, SQON Property Management is committed to helping you
+          estate portfolio, SQOON Property Management is committed to helping you
           manage your property with confidence.
         </p>
         <p className="font-semibold text-blue-800 pt-2">
-          SQON Property Management — Managing Properties. Building Trust.
+          SQOON Property Management — Managing Properties. Building Trust.
           Protecting Investments.
         </p>
       </section>
@@ -75,7 +75,7 @@ export default function About() {
               Chief Executive Officer &amp; Owner
             </p>
             <p className="text-gray-700 mb-3">
-              Corey Quaintance leads SQON Property Management with a focus on
+              Corey Quaintance leads SQOON Property Management with a focus on
               professional service, responsible property oversight, and building
               lasting relationships with clients.
             </p>
@@ -104,7 +104,7 @@ export default function About() {
             <tbody>
               <tr className="border-b">
                 <td className="py-3 font-semibold w-1/3">Company Name</td>
-                <td className="py-3">SQON Property Management</td>
+                <td className="py-3">SQOON Property Management</td>
               </tr>
               <tr className="border-b">
                 <td className="py-3 font-semibold">CEO / Owner</td>

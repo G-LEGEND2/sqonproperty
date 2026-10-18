@@ -29,10 +29,10 @@ export default function Home() {
       <section className="hero-bg">
         <div className="max-w-6xl mx-auto px-4 py-24 md:py-32 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-            SQON Property Management
+            SQOON Property Management
           </h1>
           <p className="text-lg md:text-xl mb-8 opacity-95 drop-shadow">
-            Professional Property Management. Trusted Service. Lasting Value.
+            Professional Property Management. Trusted Services. Lasting Value.
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link

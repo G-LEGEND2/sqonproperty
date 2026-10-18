@@ -17,7 +17,7 @@ export default function Header() {
     <header className="bg-white shadow sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-extrabold text-blue-700">SQON</span>
+          <span className="text-2xl font-extrabold text-blue-700">SQOON</span>
           <span className="text-sm font-semibold text-gray-700 leading-tight">
             Property
             <br />

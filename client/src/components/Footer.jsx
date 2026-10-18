@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300 mt-16">
       <div className="max-w-6xl mx-auto px-4 py-8 grid md:grid-cols-3 gap-6">
         <div>
-          <h3 className="text-xl font-bold text-white">SQON Property</h3>
+          <h3 className="text-xl font-bold text-white">SQOON Property</h3>
           <p className="text-sm mt-1">Find your next home</p>
         </div>
         <div className="text-sm">
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="text-center text-xs py-4 border-t border-gray-800">
-        © {new Date().getFullYear()} SQON Property. All rights reserved.
+        © {new Date().getFullYear()} SQOON Property. All rights reserved.
       </div>
     </footer>
   );
