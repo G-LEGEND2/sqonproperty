@@ -8,7 +8,7 @@ export default function Contact() {
       <ul className="space-y-2 text-gray-700">
         <li><strong>Email:</strong> info@sqoonproperty.com</li>
         <li><strong>Phone:</strong> +1 (803) 575-0591</li>
-        <li><strong>Office:</strong> Your address here</li>
+        <li><strong>Office:</strong> 1701 Charleston Regional Pky, Charleston, SC 29492</li>
       </ul>
     </div>
   );
