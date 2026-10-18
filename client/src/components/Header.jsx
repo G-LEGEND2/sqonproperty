@@ -1,83 +1,68 @@
-import { FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-const Header = () => {
-  const { currentUser } = useSelector((state) => state.user);
-  const [searchTerm, setSearchTerm] = useState("");
+export default function Header() {
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const admin = localStorage.getItem("adminToken");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set("searchTerm", searchTerm);
-
-    const searchQuery = urlParams.toString();
-
-    navigate(`/search?${searchQuery}`);
+  const logout = () => {
+    localStorage.removeItem("adminToken");
+    navigate("/");
+    window.location.reload();
   };
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
-    const searchTermFromUrl = urlParams.get("searchTerm");
-    if (searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl);
-    }
-  }, [location.search]);
-
   return (
-    <header className="bg-blue-100 shadow-md">
-      <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
-        <Link to={"/"}>
-          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-            <span className="text-blue-500">Alpha97</span>
-            <span className="text-blue-700">Estate</span>
-          </h1>
+    <header className="bg-white shadow sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2">
+          <span className="text-2xl font-extrabold text-blue-700">SQON</span>
+          <span className="text-sm font-semibold text-gray-700 leading-tight">
+            Property
+            <br />
+            Management
+          </span>
         </Link>
-        <form
-          onSubmit={handleSubmit}
-          className="bg-blue-50 p-3 rounded-lg flex items-center"
-        >
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-transparent focus:outline-none w-24 sm:w-64"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button>
-            <FaSearch className="text-blue-500" />
-          </button>
-        </form>
-        <ul className="flex gap-4">
-          <Link to={"/"}>
-            <li className="hidden sm:inline text-blue-700 hover:underline">
-              Home
-            </li>
-          </Link>
-          <Link to={"/about"}>
-            <li className="hidden sm:inline text-blue-700 hover:underline">
-              About
-            </li>
-          </Link>
 
-          <Link to={"/profile"}>
-            {currentUser ? (
-              <img
-                className="rounded-full h-7 w-7 object-cover"
-                src={currentUser.avatar}
-                alt="profile"
-              />
-            ) : (
-              <li className=" text-blue-700 hover:underline">Sign In</li>
-            )}
-          </Link>
-        </ul>
+        <nav className="hidden md:flex items-center gap-6">
+          <Link to="/" className="hover:text-blue-700">Home</Link>
+          <Link to="/search" className="hover:text-blue-700">Search</Link>
+          <Link to="/about" className="hover:text-blue-700">About</Link>
+          <Link to="/contact" className="hover:text-blue-700">Contact</Link>
+          {admin && (
+            <>
+              <Link to="/admin" className="text-blue-700 font-medium">Dashboard</Link>
+              <button onClick={logout} className="text-red-600 hover:underline">
+                Logout
+              </button>
+            </>
+          )}
+        </nav>
+
+        <button
+          className="md:hidden text-xl"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
+
+      {open && (
+        <div className="md:hidden border-t bg-white px-4 py-3 flex flex-col gap-3">
+          <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link to="/search" onClick={() => setOpen(false)}>Search</Link>
+          <Link to="/about" onClick={() => setOpen(false)}>About</Link>
+          <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          {admin && (
+            <>
+              <Link to="/admin" onClick={() => setOpen(false)}>Dashboard</Link>
+              <button onClick={logout} className="text-red-600 text-left">Logout</button>
+            </>
+          )}
+        </div>
+      )}
     </header>
   );
-};
-
-export default Header;
+}

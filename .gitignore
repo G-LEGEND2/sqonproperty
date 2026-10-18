@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Uploaded images
+api/uploads/
+client/dist/
+client/node_modules/
+*.local

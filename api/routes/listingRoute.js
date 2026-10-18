@@ -2,18 +2,27 @@ import express from "express";
 import {
   createListing,
   deleteListing,
-  getListigs,
+  getListings,
   getListing,
   updateListing,
+  setStatus,
+  incrementView,
+  adjustViews,
 } from "../controllers/listingController.js";
-import { verifyToken } from "../utils/verifyUser.js";
+import { verifyAdmin } from "../utils/verifyAdmin.js";
 
 const router = express.Router();
 
-router.post("/create", verifyToken, createListing);
-router.delete("/delete/:id", verifyToken, deleteListing);
-router.post("/update/:id", verifyToken, updateListing);
+// PUBLIC
+router.get("/get", getListings);
 router.get("/get/:id", getListing);
-router.get("/get", getListigs);
+router.post("/increment-view/:id", incrementView);
+
+// ADMIN ONLY
+router.post("/create", verifyAdmin, createListing);
+router.post("/update/:id", verifyAdmin, updateListing);
+router.post("/status/:id", verifyAdmin, setStatus);
+router.post("/views/:id", verifyAdmin, adjustViews);
+router.delete("/delete/:id", verifyAdmin, deleteListing);
 
 export default router;

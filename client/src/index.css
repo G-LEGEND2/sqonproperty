@@ -3,5 +3,55 @@
 @tailwind utilities;
 
 body {
-  background: #f5f7fa;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f8fafc;
+}
+
+/* Hero rotating background */
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: heroRotate 15s infinite;
+  z-index: 0;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 138, 0.75),
+    rgba(49, 46, 129, 0.75)
+  );
+  z-index: 1;
+}
+
+.hero-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes heroRotate {
+  0%, 27% {
+    background-image: url("/hero-1.jpg");
+  }
+  33%, 60% {
+    background-image: url("/hero-2.jpg");
+  }
+  66%, 93% {
+    background-image: url("/hero-3.jpg");
+  }
+  100% {
+    background-image: url("/hero-1.jpg");
+  }
 }
